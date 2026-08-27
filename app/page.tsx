@@ -1,17 +1,26 @@
+import EventCard from '@/components/EventCard'
 import ExploreBtn from '@/components/ExploreBtn'
-import React from 'react'
+
+const events = [
+  { image: '/images/event1.png', title: 'Event 1', slug: "event 1", location: "location-1", date: 'Date-1', time:"Time-1", },
+  { image: '/images/event2.png', title: 'Event 2' , slug: "event 2", location: "location-2", date: 'Date-2', time:"Time-2", },
+
+]
 
 const Page = () => {
   return (
     <section><h1 className='text-center'>The Hub for Every Dev <br />Event You Can't Miss</h1>
       <p className='mt-5 text-center'>Hackathon, Meetups, and Conferences, All in One Place</p>
-      <ExploreBtn/>
+      <ExploreBtn />
 
       <div className='mt-20 space-y-7'>
         <h3>Featured Events</h3>
         <ul className='events'>
-          {[1,2,3,4,5].map((event)=>(
-            <li key={event}>Event {event}</li>
+          {events.map((event) => (
+            <li key={event.title}>
+              <EventCard {...event} />
+            </li>
+
           ))}
         </ul>
       </div>
