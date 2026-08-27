@@ -2,8 +2,8 @@ import React from 'react'
 
 const Page = () => {
   return (
-    <div>Welcome to Next.js 16! </div>
-  )
+    <section><h1 className='text-center'>The Hub for Every Dev <br />Event You Can't Miss</h1>
+      <p className='mt-5 text-center'>Hackathon, Meetups, and Conferences, All in One Place</p></section>)
 }
 
 export default Page
