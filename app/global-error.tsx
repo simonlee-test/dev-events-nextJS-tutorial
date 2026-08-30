@@ -14,13 +14,18 @@ export default function GlobalError({
     posthog.captureException(error);
   }, [error]);
 
+  const handleRecovery = () => {
+    posthog.capture("page_recovery_attempted");
+    reset();
+  };
+
   return (
     <html lang="en">
       <body>
         <main>
           <h1>Something went wrong</h1>
           <p>We couldn&apos;t load this page. Please try again.</p>
-          <button onClick={reset}>Try again</button>
+          <button onClick={handleRecovery}>Try again</button>
         </main>
       </body>
     </html>
